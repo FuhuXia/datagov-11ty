@@ -9,9 +9,10 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-    versioning-strategy: "increase-if-necessary"
+    versioning-strategy: "increase"
     ignore:
-      - dependency-name: "*"
+      # Ignore major updates for 11ty packages
+      - dependency-name: "@11ty/*"
         update-types: ["version-update:semver-major"]
     groups:
       # Group all npm updates together
